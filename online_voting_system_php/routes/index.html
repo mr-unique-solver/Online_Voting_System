@@ -1,0 +1,116 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="../css/style.css">
+        <style>
+            #address
+            {
+                width:30%;
+            }
+            #imagepart
+            {
+                
+                width: 90%;
+                
+            }
+            #role
+            {
+                
+                width: 90%;
+                
+            }
+            #role select{
+                padding:10px;
+            }
+                
+                    </style>
+    </head>
+<br>
+<br>
+    <div class="cont">
+        <div class="form sign-in">
+            <form action="../api/login.php" method="POST">
+            <h2>Welcome To Online Voting System</h2>
+            <label>
+                <span>Mobile Number</span>
+                <input type="number" name="mobile"/>
+            </label>
+            <label>
+                <span>Password</span>
+                <input type="password" name="password"/>
+            </label>
+            <label>
+                <select id="dropbox" name="role">
+                    <option value="1">Voter</option>
+                    <option value="2">Group</option>
+                </select>
+            </label>
+            <button type="submit" class="submit">Sign In</button>
+        </form>
+        </div>
+       
+        <div class="sub-cont">
+            <div class="img">
+                <div class="img__text m--up">
+                 
+                    <h3>Don't have an account? Please Sign up!<h3>
+                </div>
+                <div class="img__text m--in">
+                
+                    <h3>If you already has an account, just sign in.<h3>
+                </div>
+                <div class="img__btn">
+                    <span class="m--up">Sign Up</span>
+                    <span class="m--in">Sign In</span>
+                </div>
+            </div>
+            <div class="form sign-up">
+                <form action="../api/register.php" method="POST" enctype="multipart/form-data">
+                <h2>Create your Account</h2>
+                <label>
+                    <span>Name</span>
+                    <input type="text" name="name"/>
+                </label>
+                <label>
+                    <span>Number</span>
+                    <input type="number" name="mobile"/>
+                </label>
+                <label>
+                    <span>Password</span>
+                    <input type="password" name="password"/>
+                </label>
+                <label>
+                    <span>Confirm Password</span>
+                    <input type="password" name="cpassword"/>
+                </label>
+                <label>
+                    <span>Address</span>
+                    <input type="text" name="address"/><br><br>
+                </label>
+                <label>
+                    <span>Upload Image</span>
+                    <div id="imagepart">
+                    <input type="file" name="photo"/>
+                    </div>
+                </label>
+                <label>
+                    <span>Select Role</span>
+                    <div id="role">
+                        Select your role : <select name="role">
+                            <option value="1">Voter</option>
+                            <option value="2">Group</option>
+                        </select>
+                    </div>
+                </label>
+
+                <button type="submit" class="submit">Sign Up</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelector('.img__btn').addEventListener('click', function() {
+            document.querySelector('.cont').classList.toggle('s--signup');
+        });
+    </script>
+</html>
